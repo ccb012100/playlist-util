@@ -15,12 +15,11 @@ jobs:
       matrix:
         os: [ubuntu-latest, windows-latest]
     runs-on: ${{ matrix.os }}
+    defaults:
+      run:
+        working-directory: ./playlist-util
     steps:
       - uses: actions/checkout@v3
-      - name: list files
-        run: ls -la && tree
-      - name: Change directory
-        run: cd playlist-util && ls -la && tree
       - name: Build
         run: cargo build --verbose
       - name: Run tests

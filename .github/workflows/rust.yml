@@ -20,7 +20,7 @@ jobs:
       - name: list files
         run: ls -la && tree
       - name: Change directory
-        run: cd playlist-util
+        run: cd playlist-util && ls -la && tree
       - name: Build
         run: cargo build --verbose
       - name: Run tests
